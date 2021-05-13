@@ -64,12 +64,13 @@ img {
 
 /* GLOBAL */
 h2 {
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   line-height: 1.2;
   font-weight: 500;
 }
 
-p {
+p,
+li {
   font-size: 1.5rem;
 }
 
@@ -179,11 +180,6 @@ header {
 }
 
 .services article {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 22%;
-          flex: 0 0 22%;
-  padding: 30px;
-  margin-top: -10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -192,13 +188,36 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-box-orient: horizontal;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 22%;
+          flex: 0 0 22%;
+  padding: 30px;
+  margin-top: -10%;
+  color: #fff;
+  position: relative;
+}
+
+.services article h2 {
+  margin-bottom: 30px;
+}
+
+.services article p {
+  margin-right: 30px;
+}
+
+.services article i {
+  position: absolute;
+  font-size: 3rem;
+  color: #fff;
+  bottom: 30px;
+  right: 30px;
 }
 
 .services article:nth-child(1) {
@@ -215,38 +234,6 @@ header {
 
 .services article:nth-child(4) {
   background: linear-gradient(-135deg, #b61fe0, #fe14e5);
-}
-
-.services article div {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  color: #fff;
-}
-
-.services article div h2 {
-  margin-bottom: 30px;
-}
-
-.services article i {
-  font-size: 3rem;
-  color: #fff;
 }
 
 /* about */
@@ -311,17 +298,166 @@ header {
   margin: 30px 0;
 }
 
-.about article button {
+.about button {
   padding: 1em 3em;
   font-size: 1.5rem;
   font-family: "Roboto", sans-serif;
   color: #fff;
-  border: none;
+  border: 1px solid transparent;
   background: -webkit-gradient(linear, left top, right top, from(#ff8615), to(#ff2f4f));
   background: linear-gradient(to right, #ff8615, #ff2f4f);
+  cursor: pointer;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
 }
 
-/* header */
-/* header */
+.about button:hover {
+  border-radius: 2em;
+}
+
+.about button:active {
+  color: #155ed1;
+}
+
+/* whySwimming */
+.whySwimming {
+  background: url(../img/swimer2.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.whySwimming article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 100%;
+}
+
+.whySwimming article > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 47, 79, 0.9)), to(rgba(255, 27, 153, 0.9)));
+  background: linear-gradient(rgba(255, 47, 79, 0.9), rgba(255, 27, 153, 0.9));
+  padding: 90px;
+  color: #fff;
+}
+
+.whySwimming article h2 {
+  margin-bottom: 50px;
+}
+
+.whySwimming article p {
+  margin-bottom: 30px;
+}
+
+.whySwimming article button {
+  padding: 1em 3em;
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  color: #000;
+  border: 1px solid transparent;
+  background: #fff;
+  cursor: pointer;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+  margin-top: 20px;
+}
+
+.whySwimming article button:hover {
+  border-radius: 2em;
+}
+
+.whySwimming article button:active {
+  color: #155ed1;
+}
+
+/* events */
+.events {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  color: #fff;
+}
+
+.events article {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 49%;
+          flex: 0 0 49%;
+}
+
+.events article:first-child {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 175, 0, 0.9)), to(rgba(255, 134, 21, 0.9)));
+  background: linear-gradient(rgba(255, 175, 0, 0.9), rgba(255, 134, 21, 0.9));
+  padding: 90px;
+}
+
+.events article:first-child ul {
+  margin-top: 40px;
+}
+
+.events article:first-child ul li {
+  padding-left: 2em;
+  position: relative;
+  line-height: 2.5;
+}
+
+.events article:first-child ul li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 1em;
+  width: 1em;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: url(../img/arrow-circle.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 /* header */
 /*# sourceMappingURL=style.css.map */

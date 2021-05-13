@@ -3,13 +3,32 @@
 
 /* GLOBAL */
 h2 {
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   line-height: 1.2;
   font-weight: 500;
 }
-p {
+p,
+li {
   font-size: 1.5rem;
 }
+
+@mixin btnBasic($background, $fontColor) {
+  padding: 1em 3em;
+  font-size: 1.5rem;
+  font-family: $textFont;
+  color: $fontColor;
+  border: 1px solid transparent;
+  background: $background;
+  cursor: pointer;
+  transition: $transition;
+  &:hover {
+    border-radius: 2em;
+  }
+  &:active {
+    color: $navlinks2;
+  }
+}
+
 /* nav */
 nav {
   @include flex(space-between, center);
@@ -59,9 +78,25 @@ header {
 .services {
   @include flex(space-between, stretch);
   article {
+    @include flex(space-between, flex-start, column);
     flex: 0 0 22%;
     padding: 30px;
     margin-top: -10%;
+    color: $white;
+    position: relative;
+    h2 {
+      margin-bottom: 30px;
+    }
+    p {
+      margin-right: 30px;
+    }
+    i {
+      position: absolute;
+      font-size: 3rem;
+      color: $white;
+      bottom: 30px;
+      right: 30px;
+    }
 
     &:nth-child(1) {
       background: linear-gradient(-135deg, $orange, $lightorange);
@@ -74,21 +109,6 @@ header {
     }
     &:nth-child(4) {
       background: linear-gradient(-135deg, $violet, $lightviolet);
-    }
-
-    @include flex(space-between, flex-end);
-    div {
-      height: 100%;
-      @include flex(space-between, flex-start, column);
-      flex: 1;
-      color: $white;
-      h2 {
-        margin-bottom: 30px;
-      }
-    }
-    i {
-      font-size: 3rem;
-      color: $white;
     }
   }
 }
@@ -119,16 +139,71 @@ header {
       line-height: 1.5;
       margin: 30px 0;
     }
-    button {
-      padding: 1em 3em;
-      font-size: 1.5rem;
-      font-family: $textFont;
+  }
+  button {
+    @include btnBasic(linear-gradient(to right, $orange, $lightred), $white);
+  }
+}
+
+/* whySwimming */
+.whySwimming {
+  background: url(../img/swimer2.png);
+  @include bgBasic;
+  height: 100vh;
+  article {
+    @include flex(flex-start, stretch);
+    height: 100%;
+    & > div {
+      @include flex(space-between, flex-start, column);
+      flex: 0 0 50%;
+      background: linear-gradient(rgba($lightred, 0.9), rgba($red, 0.9));
+      padding: 90px;
       color: $white;
-      border: none;
-      background: linear-gradient(to right, $orange, $lightred);
+    }
+    h2 {
+      margin-bottom: 50px;
+    }
+    p {
+      margin-bottom: 30px;
+    }
+    button {
+      @include btnBasic($white, $black);
+      margin-top: 20px;
     }
   }
 }
-/* header */
-/* header */
+/* events */
+.events {
+  @include flex(space-between, stretch);
+  color: $white;
+  article {
+    flex: 0 0 49%;
+    &:first-child {
+      background: linear-gradient(rgba($lightorange, 0.9), rgba($orange, 0.9));
+      padding: 90px;
+      ul {
+        margin-top: 40px;
+        li {
+          padding-left: 2em;
+          position: relative;
+          line-height: 2.5;
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 1em;
+            width: 1em;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background: url(../img/arrow-circle.png);
+            @include bgBasic;
+          }
+        }
+      }
+    }
+    &:last-child {
+    }
+  }
+}
 /* header */
