@@ -77,4 +77,7 @@ img {
 }
 .py {
   padding: $py;
+  @media (max-width: 767px) {
+    padding: 35px 0;
+  }
 }
