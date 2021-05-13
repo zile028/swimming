@@ -12,6 +12,8 @@ li {
   font-size: 1.5rem;
 }
 
+/* MIXINS */
+
 @mixin btnBasic($background, $fontColor) {
   padding: 1em 3em;
   font-size: 1.5rem;
@@ -29,6 +31,13 @@ li {
   }
 }
 
+/* BASIC STYLES*/
+.half {
+  @include flex(space-between, stretch);
+  .wrapper {
+    flex: 0 0 49%;
+  }
+}
 /* nav */
 nav {
   @include flex(space-between, center);
@@ -116,7 +125,7 @@ header {
 /* about */
 .about {
   article {
-    @include flex(space-between, stretch);
+    @extend .half;
     margin-bottom: 70px;
     &:nth-child(even) {
       div:last-child {
@@ -124,7 +133,6 @@ header {
       }
     }
     div {
-      flex: 0 0 49%;
       &:first-child {
         @include flex(center, flex-start, column);
         background-color: $lightgray;
@@ -174,10 +182,9 @@ header {
 }
 /* events */
 .events {
-  @include flex(space-between, stretch);
+  @extend .half;
   color: $white;
   article {
-    flex: 0 0 49%;
     &:first-child {
       background: linear-gradient(rgba($lightorange, 0.9), rgba($orange, 0.9));
       padding: 90px;
@@ -202,8 +209,97 @@ header {
         }
       }
     }
-    &:last-child {
+  }
+}
+
+/* players */
+.players {
+  @include flex(space-between, stretch);
+  article {
+    @include flex(space-between, center, column);
+    flex: 0 0 23%;
+    div {
+      &:first-child {
+        width: 100%;
+        padding: 0 20%;
+        background: linear-gradient($white 50%, $lightgray 50%);
+      }
+      &:last-child {
+        @include flex(space-between, flex-start, column);
+        background: $lightgray;
+        padding: 45px;
+        flex: 1;
+        p {
+          color: $text;
+          flex: 1;
+        }
+        h3 {
+          margin-top: 30px;
+          color: $orange;
+          font-size: 2.5rem;
+          font-weight: 400;
+        }
+      }
+    }
+    img {
+      border-radius: 50%;
     }
   }
 }
-/* header */
+
+/* contacts */
+.contacts {
+  @extend .half;
+  article {
+    &:first-child {
+      background: linear-gradient(rgba($navlinks2, 0.9), rgba($blue, 0.9));
+      padding: 90px;
+      color: $white;
+      h2 {
+        margin-bottom: 30px;
+      }
+      h3 {
+        font-size: 3rem;
+        font-weight: 400;
+        margin: 20px 0;
+        i {
+          margin: 0 0.5em;
+        }
+      }
+      .social {
+        margin-top: 30px;
+        padding-left: 1em;
+      }
+      i {
+        font-size: 2.3rem;
+        position: relative;
+        margin: 0 1em 0 0;
+        color: $navlinks2;
+        z-index: 3;
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          background: $white;
+          border-radius: 50%;
+          z-index: -1;
+          height: 1em;
+          width: 1em;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 0.3em;
+        }
+      }
+    }
+  }
+}
+
+/* footer */
+footer {
+  text-align: center;
+  p {
+    color: rgba($text, 0.6);
+    font-size: 2rem;
+  }
+}
