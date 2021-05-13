@@ -3,4 +3,60 @@
 
 /* GLOBAL */
 
-/* HEADER */
+/* nav */
+nav {
+  @include flex(space-between, center);
+  .logo {
+    color: $blue;
+    font-size: 3rem;
+    font-weight: 500;
+    span {
+      position: relative;
+      font-size: 2rem;
+      top: -0.5em;
+    }
+  }
+  ul {
+    @include flex(space-between, center);
+    flex: 0 0 60%;
+    li {
+      flex: 1;
+      text-align: center;
+      padding: 60px 0px;
+      cursor: pointer;
+      transition: $transition;
+      &:hover {
+        background: $navlinks2;
+        color: $white;
+      }
+
+      a {
+        font-family: $fontNav;
+        font-weight: 500;
+        font-size: 1.2rem;
+        position: relative;
+        transition-property: background-color;
+      }
+    }
+    // flex: 1;
+  }
+}
+
+/* header */
+header {
+  height: 100vh;
+  background: url(../img/header.png);
+  @include bgBasic;
+}
+
+/* services */
+.services {
+  @include flex(space-between, center);
+  article {
+    flex: 0 0 24%;
+  }
+}
+/* header */
+/* header */
+/* header */
+/* header */

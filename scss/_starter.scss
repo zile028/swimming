@@ -1,5 +1,5 @@
 /*--- FONTS ---*/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;500;700&display=swap");
 
 $textFont: "Roboto", sans-serif;
 $textHeadings: "Roboto", sans-serif;
@@ -27,7 +27,7 @@ $boxShadow: 0 5px 10px 0px rgba($text, 0.5);
 
 /* INITIAL VALUE */
 $py: 70px 0;
-$widthContainer: 70%;
+$widthContainer: 95%;
 $lineHeight: 1.7;
 
 /* RESET STYLE */
@@ -62,7 +62,7 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
-  transition: color $transition;
+  transition: $transition;
 }
 img {
   display: block;
